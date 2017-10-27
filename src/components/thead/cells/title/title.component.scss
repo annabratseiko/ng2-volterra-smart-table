@@ -1,0 +1,32 @@
+a.sort {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: left;
+  color: #7a858e;
+  text-decoration: none;
+  &.asc, &.desc {
+    font-weight: bold;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-bottom: 0;
+      width: 8px;
+      height: 10px;
+      padding-left: 7px;
+      position: absolute;
+      top: 18px;
+      margin-left: 3px;
+      background-size: contain;
+      background: url('~assets/img/icons/arrow.png') no-repeat center center;
+    }
+  }
+
+  &.desc::after {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    margin-bottom: 0;
+  }
+}

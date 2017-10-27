@@ -1,0 +1,127 @@
+.ng2-smart-pagination-nav {
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    padding: 4px 20px;
+}
+
+.ng2-items-perpage {
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        li {
+            color: #959ca4;
+            display: inline-block;
+            span {
+                display: inline-block;
+                border: 1px solid #eceff2;
+                cursor: pointer;
+                width: 32px;
+                height: 28px;
+                text-align: center;
+                line-height: 28px;
+                font-size: 12px;
+            }
+            &.active {
+                span {
+                    color: #262933;
+                    font-weight: 600;
+                    background: #fafbfc;
+                }
+            }
+            .ng2-pager-caption {
+                padding-left: 9px;
+                font-size: 14px;
+                color: #7a858e;
+            }
+            &:first-child {
+                span {
+                    border-radius: 4px 0 0 4px;
+                }
+            }
+            &:nth-child(2) {
+                span {
+                    border-radius: 0;
+                    border-left: none;
+                    border-right: none;
+                }
+            }
+            &:nth-child(3)  {
+                span {
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+        }
+    }
+}
+
+.ng2-smart-pagination {
+    display: inline-flex;
+    font-size: .875em;
+    align-items: center;
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+    .ng2-smart-page-item {
+        display: inline;
+        color: #7a858e;
+        font-size: 14px;
+        .ng2-smart-page-link {
+            color: #959ca4;
+            font-size: 15px;
+            display: block;
+            width: 33px;
+            height: 30px;   
+        }
+        a {
+            color: #959ca4;
+            font-size: 15px;
+            text-decoration: none;
+            position: relative;
+            &:before {
+                content: '';
+                background-size: 6px 14px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url('~assets/img/icons/arrow-right.png') no-repeat center 7px;
+            }                
+        }
+        &.ng2-pager-btn {
+            border: 1px solid #f0f3f6;
+            &.ng2-prev {
+                margin: 0 0 0 15px;
+                border-right: none;
+                border-radius:  5px 0 0 5px;
+                a {
+                    transform: rotate(180deg);
+                }
+            }
+            &.ng2-next {
+                border-radius:  0 5px 5px 0;
+            }
+        }
+        &.disabled {
+            &.ng2-pager-btn {
+                a {
+                    &:before {
+                        opacity: 0.3;
+                    }
+                }
+            }
+        }
+    }
+}
